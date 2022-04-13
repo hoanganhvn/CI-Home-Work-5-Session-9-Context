@@ -1,6 +1,6 @@
-import {useState, useContext} from 'react';
+import { useState, useContext } from 'react';
 import AddContext from "./AddContext";
-   
+
 function Login(props) {
     const loginContext = useContext(AddContext);
     // console.log(loginContext.setLogin);
@@ -29,8 +29,8 @@ function Login(props) {
                 <div className="col-sm-12 ">
                     <form className="col-sm-6 text-center border border-dark mx-auto mt-5" onSubmit={submitInputValue} >
                         <h1 className="display-4 ">{loginContext.login.formLogin}</h1>
-                        <input  type="text" value={input}  onChange={getInput} className="form-control border border-dark mt-2" placeholder={loginContext.login.placeholderLogin} />
-                        <button type="submit"  className="btn btn-primary mt-2 mb-2"  >{loginContext.login.buttonLogin}</button>
+                        <input type="text" value={input} onChange={getInput} className="form-control border border-dark mt-2" placeholder={loginContext.login.placeholderLogin} />
+                        <button type="submit" className="btn btn-primary mt-2 mb-2"  >{loginContext.login.buttonLogin}</button>
                     </form>
                 </div>
             </div>

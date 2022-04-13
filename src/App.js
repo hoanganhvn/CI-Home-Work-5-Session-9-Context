@@ -5,7 +5,7 @@ import Navbar from './Components/Navbar';
 import Login from './Components/Login';
 import Selector from './Components/Selector';
 import AddContext from './Components/AddContext';
-import {  useState } from "react";
+import { useState } from "react";
 
 function App() {
   const [login, setLogin] = useState({
@@ -15,16 +15,16 @@ function App() {
     formLogin: "ĐĂNG NHẬP",
     placeholderLogin: "TÊN ĐĂNG NHẬP...",
     buttonLogin: "ĐĂNG NHẬP"
-});
+  });
 
   return (
-    <AddContext.Provider value={{login: login, setLogin: setLogin}}>
+    <AddContext.Provider value={{ login: login, setLogin: setLogin }}>
       <div>
-          <Navbar/>
-          <Imagin />
-          <HomeWork />
-          <Login popupLogin={login.popupLogin}/>
-          <Selector />
+        <Navbar />
+        <Imagin />
+        <HomeWork />
+        <Login popupLogin={login.popupLogin} />
+        <Selector />
       </div>
     </AddContext.Provider>
   );
