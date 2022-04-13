@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+
+import HomeWork from './Components/HomeWork';
+import Imagin from './Components/Imagin';
+import Navbar from './Components/Navbar';
+import Login from './Components/Login';
+import Selector from './Components/Selector';
+import AddContext from './Components/AddContext';
+import {  useState } from "react";
 
 function App() {
+  const [login, setLogin] = useState({
+    welcomeNavbar: "ĐĂNG NHẬP",
+    welcomeHomeWork: "",
+    popupLogin: "block",
+    formLogin: "ĐĂNG NHẬP",
+    placeholderLogin: "TÊN ĐĂNG NHẬP...",
+    buttonLogin: "ĐĂNG NHẬP"
+});
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AddContext.Provider value={{login: login, setLogin: setLogin}}>
+      <div>
+          <Navbar/>
+          <Imagin />
+          <HomeWork />
+          <Login popupLogin={login.popupLogin}/>
+          <Selector />
+      </div>
+    </AddContext.Provider>
   );
 }
 
